@@ -26,7 +26,7 @@ import java.util.Collections;
 
 @Slf4j
 @RequiredArgsConstructor
-@Configuration
+//@Configuration
 public class SettlementJobConfig {
 
     private final JobRepository jobRepository;
