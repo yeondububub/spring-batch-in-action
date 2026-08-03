@@ -57,6 +57,8 @@ public class SimpleJobConfig {
 }
 ```
 
+<img src="./imgs/img001.png">
+
 - `JobBuilder("simpleJob", jobRepository)`
   - `simpleJob` 이름으로 Batch Job을 생성합니다.
 
