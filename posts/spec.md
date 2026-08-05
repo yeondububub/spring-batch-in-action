@@ -92,3 +92,7 @@
     - **Commit:** Writer가 `saveAll()` 등을 수행하면, 그때 트랜잭션이 **단 1번 커밋됨**
   - 여기서 가장 중요한점은 ItemReader 와 ItemProcessor 는 데이터를 한개씩 처리한다.
     - 데이터를 하나씩 처리 후 우리가 설정한 chunk 사이즈에 맞는 청크 1개가 생성되면, 이후에 ItemWriter가 청크 단위로 쓰기 작업을 시작한다.
+
+## 소스코드
+
+- [SettlementJobConfig.java](../src/main/java/com/example/springbatchinaction/job/SettlementJobConfig.java)
