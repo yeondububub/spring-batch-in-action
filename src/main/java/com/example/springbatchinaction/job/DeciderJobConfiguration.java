@@ -20,7 +20,7 @@ import org.springframework.transaction.PlatformTransactionManager;
 import java.util.Random;
 
 @Slf4j
-@Configuration
+//@Configuration
 @RequiredArgsConstructor
 public class DeciderJobConfiguration {
 
