@@ -20,7 +20,7 @@ import java.util.List;
 
 @Slf4j
 @RequiredArgsConstructor
-@Configuration
+//@Configuration
 public class ChunkOrientedJobConfig {
 
     private final JobRepository jobRepository;
