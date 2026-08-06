@@ -19,7 +19,7 @@ Job Parameter를 SpEL(Spring Expression Language) 표현식(`@Value("#{jobParame
     @Bean
     public Job scopeJob() {
         return new JobBuilder("scopeJob", jobRepository)
-                .start(scopeStep1(null)) // Spring Batch SpEL 바인딩 시 자바 설정상 파라미터에 null을 전달하면, 프레임워크가 실행 시점에 알맞은 값을 주입합니다.
+                .start(scopeStep1(null))
                 .next(scopeStep2())
                 .build();
     }
@@ -45,7 +45,7 @@ Job Parameter를 SpEL(Spring Expression Language) 표현식(`@Value("#{jobParame
     @Bean
     public Step scopeStep2() {
         return new StepBuilder("scopeStep2", jobRepository)
-                .tasklet(scopeStep2Tasklet(null), transactionManager)
+                .tasklet(scopeStep2Tasklet(null))
                 .build();
     }
 
