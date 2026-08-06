@@ -7,7 +7,7 @@ Step은 실제로 배치 작업을 수행하는 단위입니다.
 
 이번 문서에서는 Spring Batch의 Job 흐름을 처리하는 다양한 방법에 대해 배워봅니다.
 
-## Next (순차적 흐름)
+## Next
 
 ```java
 @Slf4j
@@ -69,7 +69,7 @@ public class StepNextJobConfiguration {
 하지만, 이전 Step에서 오류가 발생하면 그 뒤에 연결된 Step들은 실행되지 못한다는 특징이 있습니다.  
 상황에 따라 앞선 Step의 실행 결과(ExitStatus)에 따라 서로 다른 Step을 실행하거나 분기 처리해야 할 수 있습니다. 이럴 때 조건별 흐름 제어를 활용합니다.
 
-다음과 같이 코드를 작성해 보겠습니다.
+다음과 같이 코드가 있다고 가정해봅시다.
 
 ```java
 @Slf4j
@@ -162,7 +162,7 @@ Job Builder에서 흐름을 제어하는 핵심 메서드들은 다음과 같습
 
 실행 결과는 다음과 같습니다.
 
-<img src="./imgs/img011.png">
+<img src="./imgs/img012.png">
 
 `step1`과 `step3`만 실행된 것을 확인할 수 있습니다.
 `step1`에서 지정한 `ExitStatus.FAILED` 조건으로 인해 `step2`가 건너뛰어지고 바로 `step3`가 실행되었습니다.
@@ -180,7 +180,7 @@ Job Builder에서 흐름을 제어하는 핵심 메서드들은 다음과 같습
 `BatchStatus`는 프레임워크 내부에서 배치의 진행/완료/실패 상태를 관리하기 위한 enum이고,  
 `ExitStatus`는 흐름 제어(Flow Control)에 사용되는 종료 문자열 태그입니다.
 
-## Decider (JobExecutionDecider)
+## Decide
 
 앞서 본 조건별 흐름 제어 방식은 Step의 `ExitStatus`를 변경하거나 비즈니스 로직에 분기 코드가 섞이는 단점이 있습니다.
 `JobExecutionDecider`를 사용하면 복잡한 분기 로직을 Step과 명확히 분리하여 전문적으로 흐름 제어만 담당하도록 처리할 수 있습니다.
