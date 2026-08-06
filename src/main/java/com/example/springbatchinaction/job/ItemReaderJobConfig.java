@@ -27,7 +27,7 @@ import java.util.Map;
 
 @Slf4j
 @RequiredArgsConstructor
-@Configuration
+//@Configuration
 public class ItemReaderJobConfig {
 
     private final JobRepository jobRepository;
